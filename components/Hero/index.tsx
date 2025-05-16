@@ -20,14 +20,6 @@ const Hero = () => {
                 <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
                 Frequency Club is a platform for enthusiastic “To Be Engineers” to explore and apply technology in meaningful ways. The club blends creativity, technical knowledge, and societal needs to build impactful projects.
                 </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
-                    href="https://github.com/nerdylua/frequency-website"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
-                  >
-                    Star on GitHub
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
