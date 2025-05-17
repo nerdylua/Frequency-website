@@ -1,6 +1,5 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import EventSectionOne from "@/components/about/index";
+import EventSectionTwo from "@/components/about/index2";
 
 import { Metadata } from "next";
 
@@ -10,17 +9,13 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-const AboutPage = () => {
+const EventsPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="About Page"
-        description="This is About Page for Frequency club"
-      />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+    <EventSectionOne />
+    <EventSectionTwo />
     </>
   );
 };
 
-export default AboutPage;
+export default EventsPage;

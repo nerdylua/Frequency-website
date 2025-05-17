@@ -15,9 +15,22 @@ const menuData: Menu[] = [
   },
   {
     id: 3,
-    title: "Contact",
+    title: "Events and Achievements",
+    path: "/events_achievements",
+    newTab: false,
+  },
+  {
+    id: 3,
+    title: "Future Projects",
+    path: "/future_projects",
+    newTab: false,
+  },
+  {
+    id: 4,
+    title: "UTPT",
     path: "/contact",
     newTab: false,
   },
 ];
+
 export default menuData;

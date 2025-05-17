@@ -24,7 +24,7 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Welcome to Frequency"
+                title="Events"
                 paragraph=""
                 mb="44px"
               />

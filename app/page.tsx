@@ -1,10 +1,11 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import EventsOne from "@/components/Events_achievements/EventsAchievements1";
+import EventsTwo from "@/components/Events_achievements/EventsAchievements2";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
-import Features from "@/components/Features";
+import About from "@/components/about";
 import Hero from "@/components/Hero";
-import Video from "@/components/Video";
+import Photo from "@/components/about/index2";
+import Projects from "@/components/projects/index";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,10 +19,11 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      <Features />
-      <Video />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+      <About />
+      <Photo />
+      <EventsOne />
+      <EventsTwo />
+      <Projects />
       <Contact />
     </>
   );
