@@ -39,6 +39,7 @@ module.exports = {
         black: "#121723",
         dark: "#1D2430",
         primary: "#4A6CF7",
+        "primary-foreground": "#121213",
         yellow: "#FBB040",
         "body-color": "#788293",
         "body-color-dark": "#959CB1",
@@ -47,6 +48,11 @@ module.exports = {
         stroke: "#E3E8EF",
         "stroke-dark": "#353943",
         "bg-color-dark": "#171C28",
+        "color-1": "hsl(var(--color-1))",
+        "color-2": "hsl(var(--color-2))",
+        "color-3": "hsl(var(--color-3))",
+        "color-4": "hsl(var(--color-4))",
+        "color-5": "hsl(var(--color-5))",
       },
 
       boxShadow: {
@@ -65,6 +71,15 @@ module.exports = {
       },
       dropShadow: {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
+      },
+      animation: {
+        rainbow: "rainbow var(--speed, 2s) infinite linear",
+      },
+      keyframes: {
+        rainbow: {
+          "0%": { "background-position": "0%" },
+          "100%": { "background-position": "200%" },
+        },
       },
     },
   },
