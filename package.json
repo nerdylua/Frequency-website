@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.33.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "framer-motion": "^12.12.1",
     "next": "^15.3.0",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",

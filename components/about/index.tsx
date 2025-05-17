@@ -16,8 +16,8 @@ const Features = () => {
           />
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
+            {featuresData.map((feature, index) => (
+              <SingleFeature key={feature.id || `feature-${index}`} feature={feature} />
             ))}
           </div>
         </div>
@@ -33,8 +33,8 @@ const Features = () => {
           />
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {verticalsData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
+            {verticalsData.map((feature, index) => (
+              <SingleFeature key={feature.id || `vertical-${index}`} feature={feature} />
             ))}
           </div>
         </div>
