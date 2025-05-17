@@ -2,20 +2,20 @@
 import { useEffect, useRef } from "react";
 
 function SplashCursor({
-  SIM_RESOLUTION = 59,          
-  DYE_RESOLUTION = 507,         
-  CAPTURE_RESOLUTION = 250,     
-  DENSITY_DISSIPATION = 6.5,      
-  VELOCITY_DISSIPATION = 4.5,     
-  PRESSURE = 0.1,
-  PRESSURE_ITERATIONS = 8,     
-  CURL = 1.5,                     
-  SPLAT_RADIUS = 0.08,           
-  SPLAT_FORCE = 2500,           
-  SHADING = false,              
-  COLOR_UPDATE_SPEED = 6,       
-  BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true,
+  SIM_RESOLUTION = 51,           
+  DYE_RESOLUTION = 391,          
+  CAPTURE_RESOLUTION = 191,      
+  DENSITY_DISSIPATION = 8.57,       
+  VELOCITY_DISSIPATION = 6.1,      
+  PRESSURE = 0.073,               
+  PRESSURE_ITERATIONS = 6,       
+  CURL = 1.61,                    
+  SPLAT_RADIUS = 0.079,           
+  SPLAT_FORCE = 2031,            
+  SHADING = false,               
+  COLOR_UPDATE_SPEED = 8,        
+  BACK_COLOR = { r: 0.5, g: 0, b: 0 }, 
+  TRANSPARENT = true,            
 }) {
   const canvasRef = useRef(null);
 
@@ -171,14 +171,20 @@ function SplashCursor({
     }
 
     class Material {
-      constructor(vertexShader, fragmentShaderSource) {
+      vertexShader: WebGLShader;
+      fragmentShaderSource: string;
+      programs: { [hash: number]: Program };
+      activeProgram: Program | null;
+      uniforms: { [name: string]: WebGLUniformLocation };
+
+      constructor(vertexShader: WebGLShader, fragmentShaderSource: string) {
         this.vertexShader = vertexShader;
         this.fragmentShaderSource = fragmentShaderSource;
-        this.programs = [];
+        this.programs = {};
         this.activeProgram = null;
-        this.uniforms = [];
+        this.uniforms = {};
       }
-      setKeywords(keywords) {
+      setKeywords(keywords: string[]) {
         let hash = 0;
         for (let i = 0; i < keywords.length; i++) hash += hashCode(keywords[i]);
         let program = this.programs[hash];
@@ -201,7 +207,10 @@ function SplashCursor({
     }
 
     class Program {
-      constructor(vertexShader, fragmentShader) {
+      uniforms: { [name: string]: WebGLUniformLocation };
+      program: WebGLProgram;
+
+      constructor(vertexShader: WebGLShader, fragmentShader: WebGLShader) {
         this.uniforms = {};
         this.program = createProgram(vertexShader, fragmentShader);
         this.uniforms = getUniforms(this.program);
@@ -211,7 +220,7 @@ function SplashCursor({
       }
     }
 
-    function createProgram(vertexShader, fragmentShader) {
+    function createProgram(vertexShader: WebGLShader, fragmentShader: WebGLShader) {
       let program = gl.createProgram();
       gl.attachShader(program, vertexShader);
       gl.attachShader(program, fragmentShader);
@@ -221,8 +230,8 @@ function SplashCursor({
       return program;
     }
 
-    function getUniforms(program) {
-      let uniforms = [];
+    function getUniforms(program: WebGLProgram) {
+      let uniforms = {};
       let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
       for (let i = 0; i < uniformCount; i++) {
         let uniformName = gl.getActiveUniform(program, i).name;
@@ -231,7 +240,7 @@ function SplashCursor({
       return uniforms;
     }
 
-    function compileShader(type, source, keywords) {
+    function compileShader(type: number, source: string, keywords: string[] | null) {
       source = addKeywords(source, keywords);
       const shader = gl.createShader(type);
       gl.shaderSource(shader, source);
@@ -241,7 +250,7 @@ function SplashCursor({
       return shader;
     }
 
-    function addKeywords(source, keywords) {
+    function addKeywords(source: string, keywords: string[] | null) {
       if (!keywords) return source;
       let keywordsString = "";
       keywords.forEach((keyword) => {
@@ -270,7 +279,8 @@ function SplashCursor({
             vB = vUv - vec2(0.0, texelSize.y);
             gl_Position = vec4(aPosition, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const copyShader = compileShader(
@@ -284,7 +294,8 @@ function SplashCursor({
         void main () {
             gl_FragColor = texture2D(uTexture, vUv);
         }
-      `
+      `,
+      null
     );
 
     const clearShader = compileShader(
@@ -299,7 +310,8 @@ function SplashCursor({
         void main () {
             gl_FragColor = value * texture2D(uTexture, vUv);
         }
-     `
+     `,
+      null
     );
 
     const displayShaderSource = `
@@ -362,7 +374,8 @@ function SplashCursor({
             vec3 base = texture2D(uTarget, vUv).xyz;
             gl_FragColor = vec4(base + splat, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const advectionShader = compileShader(
@@ -433,7 +446,8 @@ function SplashCursor({
             float div = 0.5 * (R - L + T - B);
             gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const curlShader = compileShader(
@@ -456,7 +470,8 @@ function SplashCursor({
             float vorticity = R - L - T + B;
             gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const vorticityShader = compileShader(
@@ -491,7 +506,8 @@ function SplashCursor({
             velocity = min(max(velocity, -1000.0), 1000.0);
             gl_FragColor = vec4(velocity, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const pressureShader = compileShader(
@@ -517,7 +533,8 @@ function SplashCursor({
             float pressure = (L + R + B + T - divergence) * 0.25;
             gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const gradientSubtractShader = compileShader(
@@ -542,7 +559,8 @@ function SplashCursor({
             velocity.xy -= vec2(R - L, T - B);
             gl_FragColor = vec4(velocity, 0.0, 1.0);
         }
-      `
+      `,
+      null
     );
 
     const blit = (() => {
