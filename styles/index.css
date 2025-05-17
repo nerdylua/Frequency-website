@@ -39,14 +39,3 @@
     @apply opacity-100;
   }
 }
-
-.neon-cursor-tracker {
-  width: 6px;
-  height: 6px;
-  background-color: #00ffff;
-  border-radius: 50%;
-  box-shadow: 0 0 2px #00ffff, 0 0 4px #00ffff, 0 0 6px #00ffff, 0 0 8px #00ffff;
-  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
-  transform: translate(-50%, -50%);
-  filter: blur(0.5px);
-}

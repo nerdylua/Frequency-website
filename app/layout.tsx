@@ -6,7 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
-import CursorTracker from "@/components/CursorTracker";
+import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className} pt-[80px] lg:pt-0`}>
         <Providers>
           <Header />
-          <CursorTracker />
+          <SplashCursor />
           {children}
           <Footer />
           <ScrollToTop />
