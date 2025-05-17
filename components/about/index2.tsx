@@ -29,7 +29,7 @@ const Video = () => {
                   scale={1.008}
                 />
                 <Image 
-                  src="/images/logo/freq-group-photo.jpg" 
+                  src="/images/logo/freq-group-photo.jpeg" 
                   alt="Frequency Club Group Photo" 
                   fill
                   className="object-cover"
