@@ -1,4 +1,4 @@
-const Contact = () => {
+const Register = () => {
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -108,4 +108,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Register;
