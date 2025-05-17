@@ -6,7 +6,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Events Page | Frequency",
   description: "This is Events and Achievements Page for Frequency club",
-  // other metadata
 };
 
 const EventsPage = () => {
