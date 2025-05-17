@@ -22,7 +22,7 @@ const Video = () => {
             >
               <div className="relative aspect-[16/9]">
                 <Image 
-                  src="/images/logo/freq-group-photo.jpg" 
+                  src="/images/logo/freq-group-photo.jpeg" 
                   alt="Frequency Club Group Photo" 
                   fill
                   className="object-cover"
