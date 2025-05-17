@@ -26,10 +26,14 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-5 text-4xl font-bold leading-tight text-black dark:text-white sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight">
-                  <TextShimmerWave>
-                    Welcome to Frequency
-                  </TextShimmerWave>
-                </h1>
+  <TextShimmerWave>
+    Welcome to
+  </TextShimmerWave>{" "}
+  <span className="whitespace-nowrap">
+    <TextShimmerWave>Frequency</TextShimmerWave>
+  </span>
+</h1>
+
                 <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
                 Frequency Club is a platform for enthusiastic "To Be Engineers" to explore and apply technology in meaningful ways. The club blends creativity, technical knowledge, and societal needs to build impactful projects.
                 </p>
