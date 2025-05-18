@@ -15,6 +15,8 @@ const Features = () => {
             title="What our club is about"
             paragraph="Join our vibrant tech community to build real-world projects, explore cutting-edge tech, and participate in top hackathons and research."
             center
+            width="600px"
+            mb="51px"
           />
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 ml-20">

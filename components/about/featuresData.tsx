@@ -29,7 +29,7 @@ const featuresData: Feature[] = [
     ),
     title: "Our Core Activities",
     paragraph:
-      "Weekly tech sessions and workshops, R&D projects, frequent Hackathons, quizzes and events, academic/ technical paper publishing,",
+      "Weekly tech sessions and workshops, R&D projects, frequent Hackathons, quizzes, events and academic/technical paper publishing.",
   },
   {
     id: 3,
