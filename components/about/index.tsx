@@ -24,8 +24,8 @@ const Features = () => {
                   <div className="mb-6 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-3xl text-primary">
                     {typeof feature.icon === "string" ? feature.icon : <span>{feature.icon}</span>}
                   </div>
-                  <h3 className="mb-5 text-xl font-bold text-black dark:text-white text-center">{feature.title}</h3>
-                  <p className="text-base !leading-relaxed text-body-color dark:text-neutral-400 text-center">{feature.paragraph}</p>
+                  <h3 className="mb-5 text-xl font-bold text-white dark:text-white text-center">{feature.title}</h3>
+                  <p className="text-base !leading-relaxed text-white dark:text-neutral-400 text-center">{feature.paragraph}</p>
                 </div>
               </GlareCard>
             ))}
