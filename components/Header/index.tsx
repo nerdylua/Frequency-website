@@ -17,21 +17,31 @@ const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const handleStickyNavbar = () => {
-    if (window.scrollY >= 80) {
-      setSticky(true);
-      const maxScroll = 300;
-      const progress = Math.min(window.scrollY / maxScroll, 1);
-      setScrollProgress(progress);
-    } else {
-      setSticky(false);
-      setScrollProgress(0);
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyNavbar);
-    return () => window.removeEventListener("scroll", handleStickyNavbar);
+    let timerId;
+
+    const handleStickyNavbar = () => {
+      if (window.scrollY >= 80) {
+        setSticky(true);
+        const maxScroll = 300;
+        const progress = Math.min(window.scrollY / maxScroll, 1);
+        setScrollProgress(progress);
+      } else {
+        setSticky(false);
+        setScrollProgress(0);
+      }
+    };
+
+    const debouncedHandleStickyNavbar = () => {
+      clearTimeout(timerId);
+      timerId = setTimeout(handleStickyNavbar, 10);
+    };
+
+    window.addEventListener("scroll", debouncedHandleStickyNavbar);
+    return () => {
+      window.removeEventListener("scroll", debouncedHandleStickyNavbar);
+      clearTimeout(timerId);
+    };
   }, []);
 
   // submenu handler
