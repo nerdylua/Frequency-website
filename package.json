@@ -9,13 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.1",
+    "@tabler/icons-react": "^3.33.0",
     "clsx": "^2.1.1",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "framer-motion": "^12.12.1",
-    "lucide-react": "^0.511.0",
-    "motion": "^12.12.1",
     "next": "^15.3.0",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
