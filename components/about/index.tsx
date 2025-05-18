@@ -19,9 +19,9 @@ const Features = () => {
             mb="51px"
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 ml-20">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map((feature, index) => (
-              <GlareCard key={feature.id || `feature-${index}`} className="justify-self-center">
+              <GlareCard key={feature.id || `feature-${index}`} className="h-full justify-self-center">
                 <div className="flex flex-col items-center justify-center text-center p-6">
                   <div className="mb-6 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-3xl text-primary">
                     {typeof feature.icon === "string" ? feature.icon : <span>{feature.icon}</span>}
@@ -39,7 +39,7 @@ const Features = () => {
       <section id="verticals" className="py-16 md:py-20 lg:py-28 bg-gray-100 dark:bg-gray-800">
         <div className="container">
           <SectionTitle
-            title="Meet Our Verticals"
+            title="Our Verticals"
             paragraph="Explore how each vertical empowers students through hands-on learning and real-world projects"
             center
             mb="-30px"
