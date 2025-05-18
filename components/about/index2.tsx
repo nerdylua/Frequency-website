@@ -12,7 +12,8 @@ const Video = () => {
           title="Join our frequency"
           paragraph="Joining Frequency Club means stepping into a vibrant tech community where you get to work on real-world projects, explore cutting-edge technologies like AI, IoT, and web development, and participate in top-tier hackathons and research."
           center
-          mb="80px"
+          mb="65px"
+          width="800px"
         />
 
         <div className="-mx-4 flex flex-wrap">
@@ -29,7 +30,7 @@ const Video = () => {
                   scale={1.008}
                 />
                 <Image 
-                  src="/images/logo/freq-group-photo.jpeg" 
+                  src="/images/logo/freq-group-photo.jpg" 
                   alt="Frequency Club Group Photo" 
                   fill
                   className="object-cover"

@@ -6,7 +6,7 @@ const verticalsData = [
     icon: "🤖",
     title: "Software Team",
     paragraph:
-    "The Software Team focuses on AI/ML, guiding students via sessions, workshops, and real-world projects. We host events like the Resonance Hackathon and encourage paper publications. We collaborate with companies looking for innovative solutions in hardware & software sections",
+    "The Software Team focuses on AI/ML, guiding students via sessions, workshops, and real-world projects. We host events like the Resonance Hackathon and encourage paper publications.",
 },
 {
     id: 2,
