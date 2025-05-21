@@ -10,9 +10,9 @@ const clubAchievements = [
 ];
 
 const ClubAchievementsList = () => (
-  <section className="w-full bg-[#181C25] pt-24 pb-16">
+  <section className="w-full bg-[#181C25] dark:bg-[#181C25] bg-white py-16 md:py-20 lg:py-28">
     <div className="container mx-auto px-4 max-w-3xl">
-      <h1 className="text-4xl font-bold text-white mb-12 text-center">
+      <h1 className="text-4xl font-bold text-white dark:text-white text-gray-800 mb-12 text-center">
       Our Members' Achievements
       </h1>
       <ul className="space-y-6 text-gray-100 text-lg">
@@ -25,7 +25,7 @@ const ClubAchievementsList = () => (
               className="mt-2 mr-4 h-4 w-4 rounded-full bg-gradient-to-br from-sky-400 to-violet-400 shadow-md
                 transition-all duration-300 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-violet-400/40"
             ></span>
-            <span className="transition-colors duration-300 group-hover:text-sky-300">{achievement}</span>
+            <span className="transition-colors duration-300 group-hover:text-sky-300 text-gray-700 dark:group-hover:text-sky-300 dark:text-gray-100">{achievement}</span>
           </li>
         ))}
       </ul>
