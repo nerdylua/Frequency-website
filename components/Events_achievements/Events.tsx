@@ -42,7 +42,7 @@ const clubActivities = [
 const ClubActivitiesGallery = () => (
   <section className="w-full bg-[#181C25] dark:bg-[#181C25] bg-white py-16 md:py-20 lg:py-28">
     <div className="container mx-auto px-4">
-      <h1 className="text-4xl font-bold text-white dark:text-white text-gray-800 mb-12 text-center">
+      <h1 className="text-5xl font-bold dark:text-white text-gray-800 mb-12 text-center">
         Events
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-10">
