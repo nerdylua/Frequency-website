@@ -1,45 +1,31 @@
-import Image from "next/image";
+const clubAchievements = [
+  "Increased club membership by 50% through targeted outreach and engaging events.",
+  "Organized and led 10+ successful events, including hackathons, workshops, and tech debates.",
+  "Developed a cross-platform mobile app that expanded the club’s reach to both iOS and Android users.",
+  "Implemented a CI/CD pipeline for club projects, reducing deployment time by 50%.",
+  "Mentored junior members in modern tech stacks, boosting team productivity by 20%.",
+  "Won 1st place in the Inter-College AI Challenge, outperforming 15+ competing teams.",
+];
 
-const AboutSectionTwo = () => {
-  return (
-    <section className="py-16 md:py-20 lg:py-28">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 lg:w-1/2">
-            <div
-              className="wow fadeInUp relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
-              data-wow-delay=".15s"
-            >
-              <Image
-                src="/images/about/about-image-2.svg"
-                alt="about image"
-                fill
-                className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-              />
-              <Image
-                src="/images/about/about-image-2-dark.svg"
-                alt="about image"
-                fill
-                className="drop-shadow-three hidden dark:block dark:drop-shadow-none"
-              />
-            </div>
-          </div>
-          <div className="w-full px-4 lg:w-1/2">
-            <div className="wow fadeInUp max-w-[470px]" data-wow-delay=".2s">
-              <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Achievements
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                Frequency Club centers on the latest technology that innovates and creates solutions to enable people and up-level expertise in different vectors
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+const ClubAchievementsList = () => (
+  <section className="w-full bg-[#181C25] pt-24 pb-16">
+    <div className="container mx-auto px-4 max-w-4xl">
+      <h2 className="text-3xl font-bold text-white mb-12 text-left border-l-4 border-primary pl-4">
+        Club Achievements
+      </h2>
+      <ul className="space-y-6 text-gray-300 text-lg">
+        {clubAchievements.map((achievement, idx) => (
+          <li
+            key={idx}
+            className="relative pl-6 hover:text-primary transition-colors cursor-default"
+          >
+            <span className="absolute left-0 top-1.5 h-5 w-1 rounded bg-primary"></span>
+            {achievement}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);
 
-export default AboutSectionTwo;
+export default ClubAchievementsList;
