@@ -9,18 +9,21 @@ const clubAchievements = [
 
 const ClubAchievementsList = () => (
   <section className="w-full bg-[#181C25] pt-24 pb-16">
-    <div className="container mx-auto px-4 max-w-4xl">
-      <h2 className="text-3xl font-bold text-white mb-12 text-left border-l-4 border-primary pl-4">
+    <div className="container mx-auto px-4 max-w-3xl">
+      <h2 className="text-3xl font-bold text-white mb-12 text-center">
         Club Achievements
       </h2>
-      <ul className="space-y-6 text-gray-300 text-lg">
+      <ul className="space-y-6 text-gray-100 text-lg">
         {clubAchievements.map((achievement, idx) => (
           <li
             key={idx}
-            className="relative pl-6 hover:text-primary transition-colors cursor-default"
+            className="flex items-start group transition-colors duration-300"
           >
-            <span className="absolute left-0 top-1.5 h-5 w-1 rounded bg-primary"></span>
-            {achievement}
+            <span
+              className="mt-2 mr-4 h-4 w-4 rounded-full bg-gradient-to-br from-sky-400 to-violet-400 shadow-md
+                transition-all duration-300 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-violet-400/40"
+            ></span>
+            <span className="transition-colors duration-300 group-hover:text-sky-300">{achievement}</span>
           </li>
         ))}
       </ul>

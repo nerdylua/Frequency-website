@@ -43,7 +43,7 @@ const ClubActivitiesGallery = () => (
   <section className="w-full bg-[#181C25] pt-24 pb-16">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold text-white mb-12 text-center">
-        Club Activities
+        Events
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-10">
         {clubActivities.map((activity, idx) => (
