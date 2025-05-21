@@ -1,5 +1,5 @@
-import EventSectionOne from "@/components/Events_achievements/EventsAchievements1";
-import EventSectionTwo from "@/components/Events_achievements/EventsAchievements2";
+import EventSectionOne from "@/components/Events_achievements/Events";
+import EventSectionTwo from "@/components/Events_achievements/Achievements";
 
 import { Metadata } from "next";
 

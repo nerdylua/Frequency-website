@@ -1,5 +1,5 @@
-import EventsOne from "@/components/Events_achievements/EventsAchievements1";
-import EventsTwo from "@/components/Events_achievements/EventsAchievements2";
+import EventsOne from "@/components/Events_achievements/Events";
+import EventsTwo from "@/components/Events_achievements/Achievements";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Register from "@/components/Register";
 import About from "@/components/about";
