@@ -21,7 +21,7 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "UTPT",
+    title: "Treasure Hunt",
     path: "/register",
     newTab: false,
   },

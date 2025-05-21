@@ -36,7 +36,7 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link href="/register">
                     <RainbowButton>
-                      Register for Treasure Hunt
+                      Treasure Hunt Registration
                     </RainbowButton>
                   </Link>
                 </div>

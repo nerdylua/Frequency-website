@@ -35,10 +35,10 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/future_projects"
+                      href="/events_achievements"
                       className="text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Future Projects
+                      Events and Achievements
                     </Link>
                   </li>
                   <li>
@@ -46,7 +46,7 @@ const Footer = () => {
                       href="/register"
                       className="text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      UTPT
+                      Treasure Hunt
                     </Link>
                   </li>
                 </ul>

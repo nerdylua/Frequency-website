@@ -49,7 +49,7 @@ const ClubActivitiesGallery = () => (
         {clubActivities.map((activity, idx) => (
           <div
             key={idx}
-            className="rounded-xl overflow-hidden shadow-lg bg-white/10 hover:scale-105 transition-transform duration-200 flex flex-col dark:bg-white/10 bg-gray-100/50"
+            className="rounded-xl overflow-hidden shadow-lg bg-white/10 transition-transform duration-200 flex flex-col dark:bg-white/10 bg-gray-100/50 shadow-purple-500/50 hover:scale-105 hover:shadow-purple-400"
           >
             <div className="relative w-full h-64">
               <Image
@@ -62,7 +62,7 @@ const ClubActivitiesGallery = () => (
               />
             </div>
             <div className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-semibold mb-2 text-white dark:text-white text-gray-800">{activity.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 dark:text-white text-gray-800">{activity.title}</h3>
               <p className="text-gray-200 dark:text-gray-200 text-gray-700">{activity.desc}</p>
             </div>
           </div>
