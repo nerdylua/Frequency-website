@@ -1,10 +1,10 @@
 const clubAchievements = [
-  "Increased club membership by 50% through targeted outreach and engaging events.",
-  "Organized and led 10+ successful events, including hackathons, workshops, and tech debates.",
-  "Developed a cross-platform mobile app that expanded the club’s reach to both iOS and Android users.",
-  "Implemented a CI/CD pipeline for club projects, reducing deployment time by 50%.",
-  "Mentored junior members in modern tech stacks, boosting team productivity by 20%.",
-  "Won 1st place in the Inter-College AI Challenge, outperforming 15+ competing teams.",
+  "Winners of UNESCO India Africa Hackathon 2022 and Smart India Hackathon 2022.",
+  "Presented at the 9th International Conference on Research into Design (ICoRD 2023, IISc) with the paper 'Self-defence Gadget for Women: Design and Development'"
+  ,"Published in IEEE journals and conferences on innovation in computing, electrical, and electronics",
+  "Winners of the Bengaluru Mobility Challenge 2024 for 'Vehicle Turn Pattern Counting and Short Term Forecasting'."
+  ,"Multiple podium finishes in major hackathons including RVITM, RNSIT, Hack4Soc IEEE RVCE, ICHack IEEE BMS, Silicon Rush, Centurition Foss United, JITHack, RV AI, Hashcode PES, Hackoverflow RNSIT AIML, IEEE NITK embedathon, Neo-Apac, and Bangalore Web3 hackathon"
+  ,"Sent multiple female club members to participate in the Google Girl Hackathon 2023, with a member reaching Pre-Finalist status"
 ];
 
 const ClubAchievementsList = () => (
