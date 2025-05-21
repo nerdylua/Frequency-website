@@ -5,7 +5,6 @@ import Register from "@/components/Register";
 import About from "@/components/about";
 import Hero from "@/components/Hero";
 import Photo from "@/components/about/index2";
-import Projects from "@/components/projects/index";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function Home() {
       <Photo />
       <EventsOne />
       <EventsTwo />
-      <Projects />
       <Register />
     </>
   );
