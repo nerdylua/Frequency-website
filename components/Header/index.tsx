@@ -151,8 +151,8 @@ const Header = () => {
         }}
       >
         <div className="container">
-          <div className="relative flex items-center justify-between py-1.5">
-            <div className="w-24 max-w-full px-1 xl:mr-4">
+          <div className="relative flex items-center justify-between py-1">
+            <div className="w-16 max-w-full px-0 xl:mr-2">
               <Link
                 href="/"
                 className={`header-logo block `}
@@ -160,15 +160,15 @@ const Header = () => {
                 <Image
                   src="/images/logo/white.svg"
                   alt="logo"
-                  width={8}
-                  height={8}
+                  width={48}
+                  height={48}
                   className="w-full dark:hidden rounded-md"
                 />
                 <Image
                   src="/images/logo/dark.svg"
                   alt="logo"
-                  width={8}
-                  height={8}
+                  width={48}
+                  height={48}
                   className="hidden w-full dark:block rounded-md"
                 />
               </Link>
@@ -176,7 +176,7 @@ const Header = () => {
             <div className="flex-1 flex justify-center">
               <nav
                 id="navbarCollapse"
-                className={`navbar w-auto rounded border-[4px] border-body-color/50 bg-white px-3 py-1 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                className={`navbar w-auto rounded border-[4px] border-body-color/50 bg-white px-2 py-0.5 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                   navbarOpen
                     ? "absolute top-full right-0 z-30 visibility opacity-100"
                     : "absolute left-1/2 top-[120%] z-30 -translate-x-1/2 invisible opacity-0"
