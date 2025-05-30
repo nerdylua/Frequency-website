@@ -87,12 +87,17 @@ const Header = () => {
     let timerId;
 
     const handleStickyNavbar = () => {
-      if (window.scrollY >= 80) {
+      // Get the current scroll position, clamping to prevent negative values
+      const currentScrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
+      
+      // Handle overscroll scenarios and normal scroll behavior
+      if (currentScrollY >= 80) {
         setSticky(true);
         const maxScroll = 300;
-        const progress = Math.min(window.scrollY / maxScroll, 1);
+        const progress = Math.min(currentScrollY / maxScroll, 1);
         setScrollProgress(progress);
       } else {
+        // This handles both normal scroll (0-79px) and overscroll scenarios
         setSticky(false);
         setScrollProgress(0);
       }
@@ -103,9 +108,18 @@ const Header = () => {
       timerId = setTimeout(handleStickyNavbar, 10);
     };
 
-    window.addEventListener("scroll", debouncedHandleStickyNavbar);
+    // Initial call to set correct state on mount
+    handleStickyNavbar();
+
+    // Use passive listener for better performance
+    window.addEventListener("scroll", debouncedHandleStickyNavbar, { passive: true });
+    
+    // Also listen for resize events that might affect scroll position
+    window.addEventListener("resize", handleStickyNavbar, { passive: true });
+    
     return () => {
       window.removeEventListener("scroll", debouncedHandleStickyNavbar);
+      window.removeEventListener("resize", handleStickyNavbar);
       clearTimeout(timerId);
     };
   }, []);
@@ -148,6 +162,8 @@ const Header = () => {
           boxShadow: sticky
             ? `0 ${scrollProgress * 10}px ${scrollProgress * 20}px rgba(0, 0, 0, 0.1)`
             : "none",
+          top: 0,
+          willChange: sticky ? "transform" : "auto",
         }}
       >
         <div className="container">

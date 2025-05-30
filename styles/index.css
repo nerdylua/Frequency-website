@@ -13,8 +13,17 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    /* Prevent overscroll behavior */
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+  
   body {
     font-family: "Inter", sans-serif;
+    /* Prevent overscroll behavior that causes content to move */
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
   }
 }
 
@@ -37,5 +46,18 @@
 
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
+  }
+  
+  /* Ensure header stays properly positioned */
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+  }
+  
+  .header.fixed {
+    position: fixed !important;
   }
 }
